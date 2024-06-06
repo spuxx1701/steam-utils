@@ -1,0 +1,72 @@
+= Firefox in Game Mode
+:nofooter:
+:href-script: https://gitlab.com/finewolf-projects/steamos-helpers/-/raw/master/firefox-in-gamemode/firefox-in-gamemode.sh?inline=false
+:experimental: true
+
+Runs Firefox in a KWin session if started in game mode. This allows Firefox's menus and fullscreen windows to work properly, as gamescope is only a minimal compositor.
+
+[%autowidth,cols="1h,~"]
+|===
+|Version
+|1.1
+|===
+
+== Installation
+
+. Switch to the SteamOS Desktop environment.
+. {href-script}[Download `firefox-in-gamemode.sh`] from this repository.
+. Mark the downloaded script as executable.
+** *From the file explorer/Dolphin*
++
+... Right click on the downloaded script.
+... Click on btn:[Properties] in the drop-down menu.
+... Navigate to the btn:[Permissions] tab in the Properties window.
+... Check the btn:[Is executable] checkbox.
+... Click btn:[OK].
++
+image::../.docs/PropertiesExecutable.png[Dolphin's properties window]
+
+** *From the Terminal/Konsole*
++
+You can use the `chmod` command to mark the script as executable.
++
+[source,bash]
+----
+chmod +x script.sh
+----
+
+. Open Steam (still from the SteamOS Desktop environment)
+. Navigate to btn:[Library]
+. Click on btn:[Add a Game] in the bottom left of the window.
+. Click on btn:[Add a Non-Steam Game...]
+. Click on btn:[Browse...]
+. Navigate to the script you just downloaded.
+. Click on btn:[Add Selected Programs].
+
+== Usage
+
+Simply run the added program you added from the Steam UI.
+
+== Updating
+
+To update the script to the latest version, either repeat the installation steps, or from the terminal/Konsole, run:
+
+[source,bash]
+----
+./firefox-in-gamemode.sh --update
+----
+
+== How it Works
+
+If the script is executed while in Game Mode, KDE's window compositor (KWin) is started in order to handle Firefox's windows.
+
+== Changelog
+
+[cols="1h,6a"]
+|===
+| Version | Description
+
+| 1.1
+|
+* Initial Published Version
+|===
